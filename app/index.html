@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./main.css" />
+
+    <title>Frontend Mentor | Expenses chart component</title>
+  </head>
+  <body>
+    <main class="main__container">
+      <h1 class="sr-only">Your expense tracker</h1>
+      <section class="expense__wrapper">
+        <div class="expense__balance">
+          <h2 class="expense__balance__title">
+            <span class="expense__balance__title--text">My balance</span>
+            <strong class="expense__balance__title--value">$921.48</strong>
+          </h2>
+          <img
+            class="expense__balance__logo"
+            src="./assets/images/logo.svg"
+            alt="Logo"
+            aria-hidden="true"
+          />
+        </div>
+        <div class="expense__content">
+          <div class="expense__chart">
+            <h3 class="expense__chart__caption" id="expense-chart-table-label">
+              Spending - Last 7 days
+            </h3>
+            <div
+              class="expense__chart__table"
+              role="grid"
+              aria-labelledby="expense-chart-table-label"
+            >
+              <div class="expense__chart__row" role="row"></div>
+            </div>
+            <div
+              class="expense__chart__tutorial"
+              role="region"
+              tabindex="0"
+              aria-label="Tutorial"
+              hidden
+            >
+              <p class="expense__chart__tutorial__title">
+                <strong>Use keyboard to navigate the table</strong>
+              </p>
+              <p>
+                <b>Arrow</b> keys to change focus to adjacent cells, <b>Home</b> key to focus at the
+                first cell, <b>End</b> key to focus at the last cell and <b>Escape</b> key to skip
+                to the summary section
+              </p>
+              <button>Close tutorial</button>
+            </div>
+          </div>
+
+          <div class="expense__summary">
+            <h3 class="expense__summary__title sr-only" tabindex="-1">Expense summary</h3>
+            <p class="expense__summary__total">
+              <span class="expense__summary__total--text">Total this month</span>
+              <strong class="expense__summary__total--value">$478.33</strong>
+            </p>
+            <p class="expense__summary__rate">
+              <strong class="expense__summary__rate--value">+2.4%</strong>
+              <span class="expense__summary__rate--text">from last month</span>
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
