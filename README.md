@@ -1,12 +1,35 @@
-## Frontend Mentor - Expenses chart component solution
+## Frontend Mentor - Expenses Chart Component Solution
 
 This is a solution to the [Expenses chart component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/expenses-chart-component-e7yJBUdjwt). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-### The challenge
+<p>
+  <a href="https://www.frontendmentor.io/solutions/accessible-bar-chart-mobile-first-pixel-perfect-w-html-and-css-and-js-WRp-nMHbEe">
+    <img
+      alt="Solution post"
+      src="https://img.shields.io/badge/Frontendmentor-blue?label=Solution%20on"
+    /></a>
+  <a href="https://haquanq-frontendmentor.github.io/expenses-chart-component/">
+    <img
+      alt="Live demo"
+      src="https://img.shields.io/badge/Demo-teal?label=Live"
+    /></a>
+  <a href="./LICENSE"
+    ><img
+      allt="MIT License"
+      src="https://img.shields.io/badge/MIT-blue?label=license"
+  /></a>
+</p>
 
-- No access to design files, attempt pixel-perfect
+## Table of Contents
 
-Users should be able to:
+- [Project Overview](#sunrise-project-overview)
+- [Tech Stack and Approach](#stars-tech-stack-and-approach)
+- [Local Development](#leaves-local-development)
+- [Deployment](#maple_leaf-deployment)
+
+## :sunrise: Project Overview
+
+### Challenge Requirements
 
 - View the bar chart and hover over the individual bars to see the correct amounts for each day
 - See the current day’s bar highlighted in a different colour to the other bars
@@ -14,32 +37,60 @@ Users should be able to:
 - See hover states for all interactive elements on the page
 - **Bonus**: Use the JSON data file provided to dynamically size the bars on the chart
 
-### Solution
+### Status
 
-- Built with: `HTML` `CSS` `JS`
-- Mobile-first workflow
-- Accessible bar chart with keyboard navigation
+Features
 
-![](./.docs/design/desktop-design.jpg)
+- [x] Accessible bar charts with keyboard navigation
 
-## Working in `fm-expense-chart-component` repository
+Accessibility
 
-Make sure you have Git + NodeJS installed in your system, open new terminal, run the following command:
+- [x] Responsive accross different screen sizes
+- [x] Interactive elements have clear focus indicator
+
+### Preview (Desktop)
+
+![](./docs/design/desktop-design.jpg)
+
+## :stars: Tech Stack and Approach
+
+### Built With
+
+- **HTML5** – Semantic structure
+- **CSS Grid & Flexbox** – Layout
+- **PostCSS** – Nested rules, custom media queries, future CSS features, minification
+- **Stylelint** – CSS linting, code style consistency
+- **TypeScript** - Interactivity and application logic
+- **Vite** - Fast development server, production build and easy configuration
+
+### Approach
+
+- Mobile-first workflow for better performance on smaller devices
+- Accessibility guided by [ARIA Authoring Practices Guide (APG)](https://www.w3.org/WAI/ARIA/apg/)
+
+## :leaves: Local Development
+
+### Prerequisites
+
+Install the following:
+
+- Git (latest LTS recommended)
+- Node.js (latest LTS recommended)
+
+### Setup
 
 ```
-git clone https://github.com/haquanq/fm-expense-chart-component.git
-```
-
-Then, run `npm install` to install all dependencies.
-
-```
+git clone https://github.com/haquanq-frontendmentor/expenses-chart-component.git
+cd expenses-chart-component
 npm install
 ```
 
-### Development workflow
-
-In terminal, run `npm run dev` to start development server:
+### Start Development Server
 
 ```
 npm run dev
 ```
+
+## :maple_leaf: Deployment
+
+Deployed to Github Pages via Github Actions (manually triggered).

@@ -32,13 +32,12 @@ const expenseChart = {
 
     userFirstTimeUsing: true,
     currentCellIndex: 0,
-    chartNextSection: document.querySelector(".expense__summary__title"),
-    chartTutorial: document.querySelector(".expense__chart__tutorial"),
-    chartTutorialCloseBtn: document.querySelector(".expense__chart__tutorial button"),
-    chartTable: document.querySelector(".expense__chart__table"),
-    chartRows: document.querySelectorAll(".expense__chart__row"),
+    chartTutorial: document.querySelector(".tutorial") as HTMLElement,
+    chartTutorialCloseBtn: document.querySelector(".tutorial button") as HTMLElement,
+    chartGrid: document.querySelector(".bar-chart__grid") as HTMLElement,
+    chartRows: document.querySelectorAll(".bar-chart__row") as NodeListOf<HTMLElement>,
     chartBarMaxHeightPx: 150,
-    chartCellList: [],
+    chartCellList: [] as HTMLElement[],
     spendingMaxAmount: 0,
 
     selectNextCell() {
@@ -74,7 +73,9 @@ const expenseChart = {
         this.chartCellList[this.currentCellIndex].focus();
     },
 
-    handleCellKeydown(e) {
+    handleCellKeydown(e: Event) {
+        if (!(e instanceof KeyboardEvent)) return;
+
         if (e.key == "ArrowUp" || e.key == "ArrowRight") {
             this.selectNextCell();
             e.preventDefault();
@@ -89,17 +90,15 @@ const expenseChart = {
             e.preventDefault();
         } else if (e.key == "Escape") {
             this.chartCellList[this.currentCellIndex].blur();
-            this.chartNextSection.focus();
         }
     },
-    handleCellClick(e) {
-        const clickedCellIndex = this.chartCellList.indexOf(e.currentTarget);
+    handleCellClick(e: Event) {
+        const clickedCellIndex = this.chartCellList.indexOf(e.currentTarget as HTMLElement);
         this.chartCellList[this.currentCellIndex].setAttribute("tabIndex", "-1");
         this.currentCellIndex = clickedCellIndex;
         this.chartCellList[this.currentCellIndex].setAttribute("tabIndex", "0");
     },
     showTutorial() {
-        console.log("Adw");
         this.chartTutorial.removeAttribute("hidden");
     },
     hideTutorial() {
@@ -117,29 +116,29 @@ const expenseChart = {
             });
 
             const chartCell = document.createElement("div");
-            chartCell.classList.add("expense__chart__cell");
+            chartCell.classList.add("bar-chart__cell");
             chartCell.setAttribute("role", "gridcell");
             chartCell.setAttribute("tabIndex", "-1");
 
             const chartBar = document.createElement("div");
-            chartBar.classList.add("expense__chart__bar");
+            chartBar.classList.add("bar-chart__track");
             chartBar.style.height = `${this.chartBarMaxHeightPx}px`;
 
             const chartBarLabel = document.createElement("span");
-            chartBarLabel.classList.add("expense__chart__cell-label");
+            chartBarLabel.classList.add("bar-chart__label");
             chartBarLabel.setAttribute("aria-hidden", "true");
             chartBarLabel.textContent = day.slice(0, 3);
 
             const chartBarInner = document.createElement("div");
-            chartBarInner.classList.add("expense__chart__bar-inner");
+            chartBarInner.classList.add("bar-chart__fill");
 
             const chartBarInnerValue = document.createElement("span");
-            chartBarInnerValue.classList.add("expense__chart__bar-inner-value");
-            if (amount == this.spendingMaxAmount) chartBarInnerValue.classList.add("max");
+            chartBarInnerValue.classList.add("bar-chart__fill-value");
+            if (amount == this.spendingMaxAmount) chartBarInnerValue.setAttribute("highest", "");
             chartBarInnerValue.style.height = `${(amount * this.chartBarMaxHeightPx) / this.spendingMaxAmount}px`;
 
             const chartBarInnerTooltip = document.createElement("span");
-            chartBarInnerTooltip.classList.add("expense__chart__bar-inner-tooltip");
+            chartBarInnerTooltip.classList.add("bar-chart__fill-tooltip");
             chartBarInnerTooltip.setAttribute("aria-hidden", "true");
             chartBarInnerTooltip.textContent = amountText;
 
@@ -163,13 +162,13 @@ const expenseChart = {
                 this.handleCellClick(e);
             });
 
-            chartCell.addEventListener("focus", (e) => {
+            chartCell.addEventListener("focus", () => {
                 if (this.userFirstTimeUsing) {
                     this.showTutorial();
                 }
             });
 
-            this.chartTutorialCloseBtn.addEventListener("click", (e) => {
+            this.chartTutorialCloseBtn.addEventListener("click", () => {
                 this.hideTutorial();
                 this.userFirstTimeUsing = false;
                 this.chartCellList[this.currentCellIndex].focus();

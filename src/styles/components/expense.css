@@ -1,0 +1,134 @@
+.expense {
+    width: min(100vw, 33.75rem);
+
+    &__header {
+        background-color: var(--color-red-300);
+        color: var(--color-cream-100);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-block: 1.375rem;
+        padding-inline: 1.25rem 1.5rem;
+        margin-block-end: 1rem;
+        border-radius: var(--rounded-sm);
+
+        @media (--mobile) {
+            padding-block: 1.875rem;
+            padding-inline: 2rem 2.4375rem;
+            margin-block-end: 1.5rem;
+            border-radius: var(--rounded-xl);
+        }
+    }
+
+    &__title {
+        font-size: var(--text-lg);
+        font-weight: var(--font-normal);
+
+        @media (--mobile) {
+            font-size: var(--text-xl);
+        }
+    }
+
+    &__title--text {
+        font-size: var(--text-base);
+        display: block;
+        margin-block-end: 0.625rem;
+        letter-spacing: -0.03em;
+
+        @media (--mobile) {
+            margin-block-end: 0.9375rem;
+            letter-spacing: 0.005em;
+            font-size: var(--text-md);
+        }
+    }
+
+    &__balance {
+        display: block;
+
+        @media (--mobile) {
+            letter-spacing: 0.005em;
+        }
+    }
+
+    &__logo {
+        max-height: 2.5rem;
+
+        @media (--mobile) {
+            max-height: none;
+        }
+    }
+
+    &__content {
+        background-color: var(--color-cream-100);
+        color: var(--color-brown-300);
+        border-radius: var(--rounded-sm);
+        padding-block: 1.5rem 1.625rem;
+        padding-inline: 1.25rem;
+
+        @media (--mobile) {
+            padding-block: 2rem 2.9375rem;
+            padding-inline: 2.5rem;
+            border-radius: var(--rounded-xl);
+        }
+    }
+
+    &__summary {
+        padding-block-start: 1.625rem;
+        display: flex;
+        justify-content: space-between;
+
+        @media (--mobile) {
+            padding-block-start: 2.1875rem;
+        }
+    }
+
+    &__increase--text {
+        display: block;
+        margin-block-end: 0.6875rem;
+        letter-spacing: -0.02em;
+
+        @media (--mobile) {
+            letter-spacing: 0.01em;
+        }
+    }
+
+    &__increase--value {
+        font-size: var(--text-2lg);
+        color: var(--color-brown-700);
+
+        @media (--mobile) {
+            font-size: var(--text-2xl);
+            letter-spacing: 0.02em;
+        }
+    }
+
+    &__rate {
+        letter-spacing: -0.03em;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        justify-content: end;
+
+        @media (--mobile) {
+            padding-block-end: 0.25rem;
+        }
+    }
+
+    &__rate--text {
+        letter-spacing: -0.025em;
+
+        @media (--mobile) {
+            letter-spacing: 0;
+        }
+    }
+
+    &__rate--value {
+        margin-block-end: 0.25rem;
+        color: var(--color-brown-700);
+
+        @media (--mobile) {
+            margin-block-end: 0.375rem;
+            letter-spacing: 0;
+        }
+    }
+}

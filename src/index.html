@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png" />
+    <link rel="stylesheet" href="./styles/main.css" />
+
+    <title>Frontend Mentor | Expenses chart component</title>
+  </head>
+  <body>
+    <main class="main">
+      <h1 class="sr-only">Your expense tracker</h1>
+      <section class="expense">
+        <div class="expense__header">
+          <h2 class="expense__title">
+            <span class="expense__title--text">My balance</span>
+            <strong class="expense__balance">$921.48</strong>
+          </h2>
+          <img class="expense__logo" src="./assets/images/logo.svg" alt="" />
+        </div>
+        <div class="expense__content">
+          <div class="bar-chart">
+            <h3 class="bar-chart__title" id="expense-chart-table-label">Spending - Last 7 days</h3>
+            <div class="bar-chart__grid" role="grid" aria-labelledby="expense-chart-table-label">
+              <div class="bar-chart__row" role="row"></div>
+            </div>
+            <div class="tutorial" role="region" aria-label="tutorial" tabindex="0" hidden>
+              <p class="tutorial__title">
+                <strong>Use keyboard to navigate the table</strong>
+              </p>
+              <p>
+                <b>Arrow</b> keys to change focus to adjacent cells, <b>Home</b> key to focus at the first cell,
+                <b>End</b> key to focus at the last cell and <b>Escape</b> key to skip to the summary section
+              </p>
+              <button class="tutorial__close-btn">Close tutorial</button>
+            </div>
+          </div>
+
+          <section class="expense__summary">
+            <h2 class="sr-only">Expense summary</h2>
+            <p class="expense__increase">
+              <span class="expense__increase--text">Total this month</span>
+              <strong class="expense__increase--value">$478.33</strong>
+            </p>
+            <p class="expense__rate">
+              <strong class="expense__rate--value">+2.4%</strong>
+              <span class="expense__rate--text">from last month</span>
+            </p>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./app.ts"></script>
+  </body>
+</html>

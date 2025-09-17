@@ -1,0 +1,17 @@
+@import "./base/fonts";
+@import "./base/variables.css";
+@import "./base/reset.css";
+
+@import "./components/tutorial.css";
+@import "./components/bar-chart.css";
+@import "./components/expense.css";
+
+@import "./utils/a11y.css";
+
+.main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+}

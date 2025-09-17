@@ -1,0 +1,65 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    line-height: var(--leading-none);
+    font-family: var(--font-primary);
+    font-weight: var(--font-normal);
+    font-size: var(--text-base);
+    background-color: var(--color-cream-300);
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+strong {
+    line-height: var(--leading-none);
+}
+
+@supports selector(:focus-visible) {
+    a:focus,
+    button:focus {
+        outline: none;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+        outline-offset: var(--focus-outline-offset);
+        outline-width: var(--focus-outline-width);
+        outline-color: var(--focus-outline-color);
+        outline-style: var(--focus-outline-style);
+    }
+}
