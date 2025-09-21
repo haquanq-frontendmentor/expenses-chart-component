@@ -74,21 +74,22 @@ Accessibility
 
 Install the following:
 
-- Git (latest LTS recommended)
+- Git (latest version)
 - Node.js (latest LTS recommended)
+- pnpm (latest version)
 
 ### Setup
 
 ```
 git clone https://github.com/haquanq-frontendmentor/expenses-chart-component.git
 cd expenses-chart-component
-npm install
+pnpm install
 ```
 
 ### Start Development Server
 
 ```
-npm run dev
+pnpm dev
 ```
 
 ## :maple_leaf: Deployment
