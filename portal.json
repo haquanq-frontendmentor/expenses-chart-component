@@ -1,0 +1,15 @@
+{
+  "name": "Expenses Chart Component",
+  "featured": false,
+  "colors:": {
+    "brand": "#EC755D"
+  },
+  "images": {
+    "preview": "https://raw.githubusercontent.com/haquanq-frontendmentor/expenses-chart-component/main/docs/preview.jpg"
+  },
+  "frontendmentor": {
+    "difficulty": "junior",
+    "challengeUrl": "https://www.frontendmentor.io/challenges/expenses-chart-component-e7yJBUdjwt",
+    "solutionUrl": "https://www.frontendmentor.io/solutions/accessible-bar-chart-mobile-first-pixel-perfect-w-html-and-css-and-js-WRp-nMHbEe"
+  }
+}
